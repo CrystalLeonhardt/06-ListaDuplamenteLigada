@@ -191,22 +191,18 @@ void excluirUltimoElemento()
 		cout << "Lista Vazia \n";
 	}
 	else {
+		NO* aux = ultimo;
 		if (primeiro == ultimo) {
-			NO* aux = primeiro;
-			NO* paraExcluir = aux;
-			free(paraExcluir);
 			primeiro = NULL;
 			ultimo = NULL;
-			cout << "item excluido \n";
 		}
 		else {
-			NO* aux = ultimo;
 			ultimo = aux->ant;
 			ultimo->prox = NULL;
-			NO* paraExcluir = aux;
-			free(paraExcluir);
-			cout << "item excluido \n";
 		}
+		NO* paraExcluir = aux;
+		free(paraExcluir);
+		cout << "item excluido \n";
 	}
 }
 
